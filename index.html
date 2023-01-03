@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Match you with a restaurant</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <p>
+                <button id="filter-btn" class="btn btn-primary" data-toggle="collapse" href="#input-collapse" aria-expanded="false" aria-controls="input-collapse">
+                    Filter
+                </button>
+                <button id="show-btn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#card-collapse" aria-expanded="false" aria-controls="card-collapse">
+                    Show match
+                </button>
+            </p><br>
+            <div class="collapse" id="input-collapse">
+                <form>
+                    <div class="form-group row">
+                        <label for="location" class="col-sm-2 col-form-label">Location</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="location">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="distance" class="col-sm-2 col-form-label">Distance (miles)</label>
+                        <div class="col-sm-10" id="distance-input-div">
+                            <input type="number" class="form-control" id="distance" placeholder="30" max="30">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Food types</label>
+                        <div class="col-sm-10" id="food-type-input-div">
+                            <input type="text" class="form-control" id="food-type" placeholder="Vietnamese, Japanese, Mexican, Mediterranean, etc.">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Place types</label>
+                        <div class="col-sm-10" id="place-type-input-div">
+                            <input type="text" class="form-control" id="place-type" placeholder="boba, coffee shop, hot pot, etc.">
+                        </div>
+                    </div>             
+                    <div class="form-group row" id="prices">
+                        <label class="col-sm-3 col-form-label">Price</label>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="cheap">
+                            <label class="custom-control-label" for="cheap">$</label>                      
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="medium">
+                            <label class="custom-control-label" for="medium">$$</label>                      
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="affordable">
+                            <label class="custom-control-label" for="affordable">$$$</label> 
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="expensive">
+                            <label class="custom-control-label" for="expensive">$$$$</label>                      
+                        </div>
+                    </div>
+                    <div class="form-group row" id="hours">
+                        <label class="col-sm-3 col-form-label">Opening Hours</label>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="breakfast">
+                            <label class="custom-control-label" for="breakfast">Breakfast</label>                      
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="lunch">
+                            <label class="custom-control-label" for="lunch">Lunch</label>                      
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" class="custom-control-input" id="dinner">
+                            <label class="custom-control-label" for="dinner">Dinner</label> 
+                        </div>
+                    </div>
+                  </form>
+            </div><br>
+            <div class="collapse" id="card-collapse">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" id="restaurant-name">Name</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id="restaurant-desc">Types</h6>
+                      <p class="card-text" id="restaurant-img">Description </p>
+                      <button href="#" class="btn btn-danger" id="reject-restaurant">X</button>
+                      <button href="#" class="btn btn-success" id="choose-restaurant"><i class="bi bi-hand-thumbs-up"></i></button>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+    height: 100%;
+    background-color: lavender;
+}
+
+.container {
+    margin-top: 1em;
+    max-width: 42em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-collapse{
+    max-width: 42em;
+    min-width: 30em;
+}
+
+#prices{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#hours{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#place-type-input-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#food-type-input-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#distance-input-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#reject-restaurant{
+    border-radius: 50%;
+}
+#choose-restaurant{
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+}
