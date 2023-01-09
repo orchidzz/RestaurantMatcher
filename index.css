@@ -23,11 +23,6 @@ body {
     justify-content: flex-start;
     align-items: center;
 }
-#hours{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 #place-type-input-div{
     display: flex;
@@ -53,4 +48,10 @@ body {
     border-radius: 50%;
     background-color: green;
     color: white;
+}
+#result-div{
+    display: none;
+}
+#error-div{
+    display: none;
 }

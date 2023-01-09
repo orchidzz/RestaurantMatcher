@@ -24,13 +24,13 @@
                     <div class="form-group row">
                         <label for="location" class="col-sm-2 col-form-label">Location</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="location">
+                            <input type="text" class="form-control" id="location" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="distance" class="col-sm-2 col-form-label">Distance (miles)</label>
                         <div class="col-sm-10" id="distance-input-div">
-                            <input type="number" class="form-control" id="distance" placeholder="30" max="30">
+                            <input type="number" class="form-control" id="distance" placeholder="25" max="25">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -48,47 +48,48 @@
                     <div class="form-group row" id="prices">
                         <label class="col-sm-3 col-form-label">Price</label>
                         <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="cheap">
+                            <input type="checkbox" class="custom-control-input" id="cheap" checked="true">
                             <label class="custom-control-label" for="cheap">$</label>                      
                         </div>
                         <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="medium">
-                            <label class="custom-control-label" for="medium">$$</label>                      
+                            <input type="checkbox" class="custom-control-input" id="affordable" checked="true">
+                            <label class="custom-control-label" for="affordable">$$</label> 
                         </div>
                         <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="affordable">
-                            <label class="custom-control-label" for="affordable">$$$</label> 
+                            <input type="checkbox" class="custom-control-input" id="medium" checked="true">
+                            <label class="custom-control-label" for="medium">$$$</label>                      
                         </div>
                         <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="expensive">
+                            <input type="checkbox" class="custom-control-input" id="expensive" checked="true">
                             <label class="custom-control-label" for="expensive">$$$$</label>                      
-                        </div>
-                    </div>
-                    <div class="form-group row" id="hours">
-                        <label class="col-sm-3 col-form-label">Opening Hours</label>
-                        <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="breakfast">
-                            <label class="custom-control-label" for="breakfast">Breakfast</label>                      
-                        </div>
-                        <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="lunch">
-                            <label class="custom-control-label" for="lunch">Lunch</label>                      
-                        </div>
-                        <div class="custom-control custom-checkbox custom-control-inline">
-                            <input type="checkbox" class="custom-control-input" id="dinner">
-                            <label class="custom-control-label" for="dinner">Dinner</label> 
                         </div>
                     </div>
                   </form>
             </div><br>
             <div class="collapse" id="card-collapse">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" id="result-div">
+                    <img class="card-img-top" src="#" id="restaurant-img">
                     <div class="card-body">
                       <h5 class="card-title" id="restaurant-name">Name</h5>
-                      <h6 class="card-subtitle mb-2 text-muted" id="restaurant-desc">Types</h6>
-                      <p class="card-text" id="restaurant-img">Description </p>
+                      <h6 class="card-subtitle mb-2 text-muted" id="restaurant-rating-price">
+                        <i class="bi bi-star" id="restaurant-rating1"></i>
+                        <i class="bi bi-star" id="restaurant-rating2"></i>
+                        <i class="bi bi-star" id="restaurant-rating3"></i>
+                        <i class="bi bi-star" id="restaurant-rating4"></i>
+                        <i class="bi bi-star" id="restaurant-rating5"></i>
+                        <span id="restaurant-rating-count"></span>
+                        <span>  </span>
+                        <span id="restaurant-price"></span>
+                      </h6>
+                      <p class="card-text" id="restaurant-location">Location </p>
                       <button href="#" class="btn btn-danger" id="reject-restaurant">X</button>
                       <button href="#" class="btn btn-success" id="choose-restaurant"><i class="bi bi-hand-thumbs-up"></i></button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;" id="error-div">
+                    <img class="card-img-top" src="error.png">
+                    <div class="card-body">
+                        <p class="card-text">No restaurant found!</p>
                     </div>
                 </div>
             </div><br>
