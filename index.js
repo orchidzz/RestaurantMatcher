@@ -37,7 +37,7 @@ $("document").ready(function () {
             req_foodTypes = req_foodTypes.replace(" ", "").toLowerCase();
             req_placeTypes = req_placeTypes.replace(" ", "").toLowerCase();
             $.ajax({
-                url: "http://localhost:3000/getRestaurant",
+                url: process.env.CYCLIC_URL,
                 contentType: "application/json",
                 type: "GET",
                 data: {
