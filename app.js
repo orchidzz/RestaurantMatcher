@@ -89,7 +89,7 @@ async function callYelpApi(
             throw new Error("You forgot to set YELP_API_KEY");
         }
         const config = {
-            Authorization: "Bearer" + process.env.YELP_API_KEY,
+            Authorization: "Bearer " + process.env.YELP_API_KEY,
             Accept: "application/json",
         };
         cache.set("coords", givenCoords);
