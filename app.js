@@ -97,13 +97,13 @@ async function callYelpApi(
         cache.set("foodTypes", givenFoodTypes);
         cache.set("placeTypes", givenPlaceTypes);
         cache.set("prices", givenPrices);
-        var givenCatergories;
+        var givenCategories;
         if (givenFoodTypes == "") {
-            givenCatergories = givenPlaceTypes;
+            givenCategories = givenPlaceTypes;
         } else if (givenPlaceTypes == "") {
-            givenCatergories = givenFoodTypes;
+            givenCategories = givenFoodTypes;
         } else {
-            givenCatergories = givenFoodTypes + "," + givenPlaceTypes;
+            givenCategories = givenFoodTypes + "," + givenPlaceTypes;
         }
 
         response = await axios({
@@ -114,7 +114,7 @@ async function callYelpApi(
                 latitude: givenCoords[1],
                 radius: givenRadius,
                 price: givenPrices,
-                catergories: givenCatergories,
+                categories: givenCategories,
                 limit: 50,
                 sort_by: "best_match",
             },
@@ -122,7 +122,8 @@ async function callYelpApi(
         });
         var restaurants = new Array();
         var businesses = response.data.businesses;
-        for (var business of businesses) {
+        for (i = businesses.length; i > 0; --i) {
+            var business = businesses[i - 1];
             var restaurant = new Restaurant();
             restaurant.url = business.url;
             restaurant.imgUrl = business.image_url;
@@ -133,7 +134,6 @@ async function callYelpApi(
             restaurant.location = business.location.display_address;
             restaurant.reviewCount = business.review_count;
             restaurants.push(restaurant);
-            cache.set("restaurants", restaurants);
         }
         cache.set("restaurants", restaurants);
     } catch (error) {
