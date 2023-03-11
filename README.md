@@ -1,6 +1,6 @@
 # RestaurantMatcher
 
-## Descrpition
+## Description
 Automate the process of choosing a restaurant by matching user with a restaurant based on user's preferences inputs. User can reject the match and get shown another match or accept the match and get directed to the Yelp page of the restaurant (similar to dating apps but for restaurant).
 
 ## Motivation
