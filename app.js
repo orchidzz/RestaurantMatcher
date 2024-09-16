@@ -150,8 +150,8 @@ class Restaurant {
     reviewCount;
     location;
 }
-app.listen(3000, () => {
-    console.log("started");
+app.listen(process.env.PORT, () => {
+    console.log("started server on: ", process.env.PORT);
 });
 // overwrite equality method of array type
 // adapted from: https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
